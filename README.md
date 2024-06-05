@@ -1,2 +1,0 @@
-# JepzFolio
-my personal portfolio
