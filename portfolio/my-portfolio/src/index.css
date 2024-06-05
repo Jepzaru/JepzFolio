@@ -1,0 +1,162 @@
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  color: black;
+  padding: 3rem 0;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  flex-wrap: wrap; 
+  animation: dropdown 0.5s ease-in-out; 
+}
+
+@keyframes dropdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping for responsiveness */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+  margin-left: 50px;
+  font-size: 2rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin-right: 150px;
+  gap: 5rem;
+  flex-wrap: wrap; /* Allow wrapping for responsiveness */
+}
+
+nav ul li {
+  font-size: 20px;
+  margin: 0;
+  font-weight: 500;
+}
+
+nav ul li a {
+  padding: 0.5rem 1rem;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active { /* Add active class */
+  color: red;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+  position: fixed; 
+  bottom: 0;
+  margin-top: 100px;
+  width: 100%;
+  z-index: 10;
+}
+
+
+main {
+  flex: 1;
+  padding: 2rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+h1, h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align items */
+    text-align: center; /* Center align text */
+  }
+
+  .logo-container {
+    margin-left: 0;
+    margin-bottom: 1rem; /* Add space below logo */
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
+    gap: 1rem;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 0.5rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  nav ul {
+    gap: 0.5rem;
+  }
+
+  nav ul li a {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .logo-container {
+    font-size: 1.5rem; /* Adjust font size */
+  }
+}
+
+.logo-container img {
+  max-width: 80px; 
+}
+ 

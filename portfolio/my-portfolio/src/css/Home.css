@@ -1,0 +1,157 @@
+@keyframes popOut {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.home-section {
+  display: flex;
+  flex-wrap: wrap; 
+  align-items: flex-start;
+  min-height: 85vh;
+  padding: 2rem 1rem;
+  margin-top: 100px;
+
+}
+
+.image-container {
+  flex: 0 0 auto; 
+  width: 100%; 
+  max-width: 700px;
+  margin-top: 1rem;
+  margin-right: 5rem;
+  margin-bottom: 150px;
+  align-self: flex-start; 
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.8s;
+  animation: popOut 0.5s ease-out;
+}
+
+
+.image-container.flipped {
+  transform: rotateY(180deg);
+}
+
+.image-container .front,
+.image-container .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.image-container .back {
+  transform: rotateY(180deg);
+  opacity: 0;
+}
+
+.image-container.flipped .front {
+  opacity: 0;
+}
+
+.image-container.flipped .back {
+  opacity: 1;
+}
+
+.image-container img {
+  width: 100%; 
+  height: auto; 
+  max-height: 700px; 
+  border-radius: 500px;
+}
+
+.text-container {
+  flex: 1; /* Allow text to take up remaining space */
+  animation: popOut 0.5s ease-out;
+}
+
+.text-container h1,
+.text-container p {
+  text-align: left;
+  color: black;
+}
+
+.text-container h1 {
+  font-size: 4rem;
+}
+
+.learn-btn {
+  padding: 10px 50px;
+  border: none;
+  font-size: 21px;
+  font-weight: 500;
+  color: white;
+  background-color: black;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 10px;
+}
+
+.learn-btn:hover {
+  background-color: red;
+}
+
+.text-container p {
+  font-size: 20px;
+  margin-bottom: 60px;
+}
+
+.links-container {
+  margin-top: 40px;
+  display: flex;
+  gap: 30px;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.link:hover {
+  color: red;
+}
+
+
+/* Add media query for smaller screens */
+@media (max-width: 768px) {
+  .home-section {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align items */
+  }
+
+  .image-container {
+    margin-right: 0;
+    margin-bottom: 2rem; /* Add space below image on small screens */
+  }
+
+  .text-container h1 {
+    font-size: 3rem; /* Adjust font size */
+  }
+
+  .text-container p {
+    font-size: 18px; /* Adjust font size */
+  }
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/mainbg.png'); 
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  opacity: 0.1;
+}

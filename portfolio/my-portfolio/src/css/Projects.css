@@ -1,0 +1,109 @@
+.projects-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+  animation: popOut 0.5s ease-out; /* Add pop-out animation */
+}
+
+@keyframes popOut {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  color: red;
+}
+
+.project-card img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.project-card-content {
+  padding: 1rem;
+}
+
+.project-card-title {
+  font-size: 2rem;
+  text-align: center;
+  color: black;
+  margin-bottom: 3rem;
+}
+
+.project-card-description {
+  font-size: 1rem;
+  color: black;
+  font-weight: 500;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/mainbg.png'); 
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  opacity: 0.1;
+  position: fixed;
+}
+
+
+.project-card-content {
+  position: relative;
+}
+
+.project-card:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: background-color 0.8s;
+  background-color: black; 
+  opacity: 0.5;
+}
+
+
+.visit-website {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 8px 16px;
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.visit-website:hover{
+  background-color: rgb(117, 0, 0);
+  transition: background-color 0.3s;
+}
+
+
+.project-card:hover .visit-website {
+  display: block;
+}
